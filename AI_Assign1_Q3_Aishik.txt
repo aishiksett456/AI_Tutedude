@@ -1,0 +1,18 @@
+price_dict={"potato":22,"onion":40,"green chilli":10,"tomato":12,"cucumber":13,"mango":80}
+print("Original dictionary: ",price_dict)
+price_dict["litchi"]=100
+print("Updated dictionary: ",price_dict)
+prod=input(print("Enter a product to delete: "))
+if prod in price_dict:
+    del price_dict[prod]
+    print(prod, "removed successfully")
+else:
+    print(prod, "not found")
+print(price_dict)    
+val=price_dict.values()
+avg=sum(val)/len(price_dict)
+max_price=max(price_dict, key=price_dict.get)
+min_price=min(price_dict, key=price_dict.get)
+print("Average price of products: ",avg)
+print("Product with maximum price",max_price)
+print("Product with minimum price",min_price)
