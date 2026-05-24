@@ -1,0 +1,24 @@
+products=["atta","biscuits","chips","soaps","matches","agarbatti"]
+price_dict={"potato":22,"onion":40,"green chilli":10,"tomato":12,"cucumber":13,"mango":80}
+catalog=[("Atta",150,"Foods"),("Biscuits",20,"Foods"),("Matches",20,"Matches"),("Dhoop",10,"Agarbatti"),("Ghee",120,"Foods")]
+print("Entered Values: ",catalog)
+
+category_to_products = {}
+
+for product, price, category in catalog:
+    if category not in category_to_products:
+        category_to_products[category] = []
+
+    category_to_products[category].append(product)
+print("New Dictionary is: ",category_to_products)
+
+Foods = catalog.count(("Atta",150,"Foods")) + catalog.count(("Biscuits",20,"Foods"))+catalog.count(("Ghee",120,"Foods"))
+Matches = catalog.count(("Matches",20,"Matches"))
+Agarbatti = catalog.count(("Dhoop",10,"Agarbatti"))
+max_count = max(Foods,Matches,Agarbatti)
+result = (
+    ["Atta", "Biscuits","Ghee"] if Foods == max_count else
+    ["Matches"] if Matches == max_count else
+    ["Dhoop"]
+)
+print("List of Products: ",result)

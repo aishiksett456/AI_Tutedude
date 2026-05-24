@@ -1,0 +1,11 @@
+categories_set={"Foods","Matches","Agarbatti"}
+print("Original Set is: ",categories_set)
+categories_set.add("NBDC")
+print("Updated set is: ",categories_set)
+categories_set.add("Matches")
+print("Set when duplicated record is present",categories_set)
+r= "Foods" in categories_set
+print(r)
+r1="Books" in categories_set
+print(r1)
+print("Total unique categories",len(categories_set))
