@@ -1,0 +1,8 @@
+def factorial(n):
+    if n<0:
+        print("Please enter the value grater than or equal to 0")
+        return
+    if((n==0) or (n==1)):
+        return 1
+    if(n>=1):
+         return n*factorial(n-1) 

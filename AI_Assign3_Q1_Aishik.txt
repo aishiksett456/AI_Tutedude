@@ -1,0 +1,14 @@
+def apply_discount(price,discount_percent=None):
+    if discount_percent is None:
+        discount_percent=5
+        
+    if discount_percent>60:
+        discount_percent=60
+    
+    discount_price=(price*discount_percent)/100.00
+    final_price=price-discount_price
+    print("Sales price: ",final_price)
+
+apply_discount(1000,10)
+apply_discount(500)
+apply_discount(2000,65)

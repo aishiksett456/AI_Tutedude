@@ -1,0 +1,4 @@
+prices = [100,250,400,1200,50]
+print("Original Prices: ",prices)
+np=list ( map( lambda prices:prices+(0.18*prices),prices))
+print("Prices after GST: ",np)

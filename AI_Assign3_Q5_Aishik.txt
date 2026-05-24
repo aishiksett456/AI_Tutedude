@@ -1,0 +1,5 @@
+prices = [100,250,400,1200,50,2000,850]
+pg=list(filter(lambda prices:prices>500,prices))
+print("List of prices greater than 500",pg)
+pl=list(filter(lambda prices:prices<=500,prices))
+print("List of prices less than or equal to 500",pl)
