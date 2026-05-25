@@ -1,0 +1,35 @@
+def add_price(prices_list,price):
+    prices_list.append(price)
+    return prices_list
+
+def get_average_price(prices_list):
+    return sum(prices_list)/len(prices_list)
+
+def get_max_price(prices_list):
+    return max(prices_list)
+
+prices_list=[]
+while True:
+    print("\nMenu")
+    print("1. Adding the Price")
+    print("2. Average of all Price")
+    print("3. Maximum Price")
+    print("q. Quit the program")
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        price = float(input("Enter price: "))
+        pl=add_price(prices_list, price)
+        print("Price added to the list")
+        print("Current price list: ",pl)
+    elif choice == "2":
+        avg = get_average_price(prices_list)
+        print("Average Price:", avg)
+    elif choice == "3":
+        maximum_price = get_max_price(prices_list)
+        print("Maximum Price is:", maximum_price)
+    elif choice.lower() == "q":
+        print("Exit")
+        break
+    else:
+        print("Invalid choice! Please enter the correct choice")
+    

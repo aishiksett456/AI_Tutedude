@@ -1,0 +1,9 @@
+def process_prices(prices):
+    print("Original price list: ",prices)
+    discounted_prices=list ( map( lambda prices:prices-(0.1*prices),prices))
+    filtered_prices=list(filter(lambda discounted_prices:discounted_prices>300,discounted_prices))
+    print("Discounted Price List: ",discounted_prices)
+    print("Filtered Price List: ",filtered_prices)
+    
+prices=[100,500,900,50,750]
+process_prices(prices)
