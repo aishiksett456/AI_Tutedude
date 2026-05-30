@@ -1,0 +1,16 @@
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    result = num1 / num2
+
+except ValueError:
+    print("Invalid input. Please enter number as input.")
+
+except ZeroDivisionError:
+    print("Division by 0 error occured")
+
+else:
+    print("Result =", result)
+
+finally:
+    print("Operation Complete")

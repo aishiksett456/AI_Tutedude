@@ -1,0 +1,22 @@
+fname = input("Enter a file name: ")
+
+f = None
+try:
+    f = open(fname, 'r')
+    data = f.read()
+    l = data.splitlines()
+    s=len(l)
+    s1=min(3,s)
+    print(s,s1)
+    for i in range(s1):
+        print(l[i])
+        
+except FileNotFoundError:
+    print("The File does not exists")
+except PermissionError:
+    print("The file cannot be opened in READ Mode")
+
+finally:
+    print("File operation attempted")
+    if file:
+        file.close()

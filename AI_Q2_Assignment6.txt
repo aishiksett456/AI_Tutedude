@@ -1,0 +1,26 @@
+def valid_price(price):
+    if not isinstance(price, (int, float)):
+        raise TypeError("Entered price is not a number")
+    if price < 0:
+        raise ValueError("Entered price is negative")
+    return True
+
+def cal_totalprices(prices):
+    total = 0
+    
+    for i in prices:
+        try:
+            price = float(i)
+            valid_price(price)
+            total=total+price
+            print("Price: ",price," Runninr Total: ",total)
+            
+        except TypeError as e:
+            pass
+        except ValueError as e:
+            pass
+        except InvalidPriceError as e:
+            pass
+
+prices = [120,350,'abc',500,-200,800]
+cal_totalprices(prices)

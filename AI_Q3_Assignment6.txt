@@ -1,0 +1,11 @@
+def check_age(age):
+    try:
+        if(age<120 and age>1):
+            print("Age is within the range...")
+            return 
+        raise Exception("Age must be between 1 and 120")
+    except Exception as e:
+        print(e)
+
+age=int(input("Enter a age: "))
+check_age(age)

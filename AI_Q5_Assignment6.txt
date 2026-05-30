@@ -1,0 +1,25 @@
+cart = []
+tb= 0.0
+c=0
+
+while True:
+    inp=input("Enter item price or 'q' to quit: ")
+    if inp == 'q':
+        break
+
+    try:
+        p=float(inp)
+        if p<0:
+            raise NegativePriceError("Price cannot be negative.")
+        cart.append(p)
+        tb=tb+p
+        c=c+1
+        print("Added price to the list:",p)
+
+    except ValueError:
+        print("Input is invalid.Please enter a price or 'q' to quit.")
+    except NegativePriceError as e:
+        print("Entered price is negative")
+
+print("Total items: ",c)
+print("Total bill: ",tb)
