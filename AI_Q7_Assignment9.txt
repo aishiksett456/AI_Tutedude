@@ -1,0 +1,9 @@
+import numpy as np
+sales=[1200,1500,900,2000,1800,1700,1600]
+print("Total weekly Sales: ",np.sum(sales))
+avg=np.mean(sales)
+print("Average Daily Sales: ",avg)
+print("Maximum Sales: ",max(sales))
+print("Minimum Sales: ",min(sales))
+print("Standard Deviation of Sales: ",np.std(sales))
+print("Count of days where sales is above average: ",np.sum(sales>avg))S

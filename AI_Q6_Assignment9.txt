@@ -1,0 +1,11 @@
+import numpy as np
+marks=np.array([78,85,90,66,72,88,95,60])
+print("Sorting of marks: ",np.sort(marks))
+print("25th percentile: ",np.percentile(marks,25))
+print("50th percentile: ",np.percentile(marks,50))
+print("75th percentile: ",np.percentile(marks,75))
+
+avg=np.mean(marks)
+print("Average is: ",avg)
+savg=np.sum(marks>avg)
+print("Students above average:",savg)

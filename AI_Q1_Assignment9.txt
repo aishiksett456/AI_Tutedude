@@ -1,0 +1,7 @@
+import numpy as np
+ar1=np.array(11)
+ar2=np.arange(1,10).reshape(3,3)
+print("Array in 1D: ",ar1)
+print("Array type of 1D: ",ar1.dtype)
+print("Array in 2D\n",ar2)
+print("Array type of 2D: ",ar2.dtype)

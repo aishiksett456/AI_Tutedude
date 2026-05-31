@@ -1,0 +1,9 @@
+import numpy as np
+marks=np.array([78,85,90,66,72,88,95,60])
+print("Mean Marks: ",np.mean(marks))
+print("Median Marks: ",np.median(marks))
+print("Variance Marks: ",np.var(marks))
+print("Standard Deviation Marks: ",np.std(marks))
+print("Maximum Marks: ",np.max(marks))
+print("Minimum Marks: ",np.min(marks))
+print("Range (max-min): ",np.ptp(marks))
