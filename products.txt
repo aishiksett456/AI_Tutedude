@@ -1,0 +1,5 @@
+Product | Price
+------------------------------
+Laptop | 45000.00
+Television | 17000.00
+Refrigerator | 14000.00

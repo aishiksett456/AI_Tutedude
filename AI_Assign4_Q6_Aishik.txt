@@ -1,0 +1,7 @@
+fn = input("Enter a file name: ")
+try:
+    with open(fn, 'r') as file:
+        con = file.read()
+        print("\nFile contents:",con)
+except FileNotFoundError:
+    print("File not found.Please check the file name..")

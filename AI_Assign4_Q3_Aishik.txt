@@ -1,0 +1,20 @@
+nv=5000
+nv1=2500
+nv2=1700
+
+f=open('sales_data.txt', 'a')
+f.write(str(nv) + '\n')
+f.write(str(nv1) + '\n')
+f.write(str(nv2) + '\n')
+f.close()
+
+f1=open('sales_data.txt', 'r')
+print("The updated content of the file is:")
+con = f1.read()
+print(con)
+
+f1.seek(0)
+l= f1.readlines()
+tl = len(l)
+f1.close()
+print(f"Total number of lines: ",tl)

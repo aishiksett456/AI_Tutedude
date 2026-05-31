@@ -1,0 +1,38 @@
+prod = {
+    "Camera": 5000,
+    "Mouse": 500,
+    "Keyboard": 800,
+    "Pendrive": 400,
+    "Monitor": 7000
+}
+
+dp = float(input("Enter discount percentage: "))
+
+dpr = {}
+f = open('discount_report.txt', 'w')
+for prods, op in prod.items():
+    dp1 = op * (1 - dp / 100)
+    dpr[prods] = dp1
+
+f = open('discount_report.txt', 'w')
+f.write(f"{prods} | ₹{op:} | ₹{dp2}\n")
+f.write("-" * 50 + "\n")
+
+tdp = 0
+for prod, op in prod.items():
+    dp2 = dpr[prod]
+    tdp =tdp+dp2
+    f.write(prod,op,dpr)
+
+avgp = tdp / len(prod)
+
+f.write(f"Total items: {len(products)}\n")
+f.write(f"Average discounted price: ₹{avgp:}\n")
+
+f.close()
+
+f1 = open('discount_report.txt', 'r')
+print("Discount Report:")
+con = f1.read()
+print(con)
+f1.close()

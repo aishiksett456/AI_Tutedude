@@ -1,0 +1,9 @@
+Enter discount percentage: 5
+Camera | ₹5000.00 | ₹4750.00
+Mouse | ₹500.00 | ₹475.00
+Keyboard | ₹800.00 | ₹760.00
+Pendrive | ₹400.00 | ₹380.00
+Monitor | ₹7000.00 | ₹6650.00
+
+Total items: 5
+Average discounted price: ₹2603.00

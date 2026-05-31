@@ -1,0 +1,14 @@
+sales = [1200,450,980,1500,3000]
+
+f = open('sales_data.txt', 'w')
+for i in sales:
+    f.write(str(i) + '\n')
+f.close()
+print("The file has been closed after witing in it.")
+
+f1=open('sales_data.txt', 'r')
+print("\nPrinting the content of the file: ")
+con=f1.read()
+print(con)
+f1.close()
+print("File has been read and closed.")

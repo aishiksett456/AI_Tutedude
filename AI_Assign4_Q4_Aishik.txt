@@ -1,0 +1,8 @@
+f3=open('sales_data.txt', 'r')
+print("File contains: ")
+l=f3.readlines()
+sv = [int(i.strip()) for i in l]
+print("Total Sales: ",sum(sv))
+print("Average Sales: ",(sum(sv)/len(l)))
+print("Highest Sales: ",max(sv))
+print("Lowest Sales: ",min(sv))
