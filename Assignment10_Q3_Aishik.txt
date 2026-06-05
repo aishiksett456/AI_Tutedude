@@ -1,0 +1,11 @@
+marks=[78,85,90,66,72]
+data=pd.Series(marks)
+print("Maximum is: ",data.max())
+print("Minimum is: ",data.min())
+print("Total Sum is: ",data.sum())
+print("Average is: ",data.mean())
+
+result = data.apply(lambda x: 'Passed' if x>=70 else 'Failed')
+print("Student Results:",result.tolist())
+pc = (result == 'Passed').sum()
+print("Number of students passed: ",pc)

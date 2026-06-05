@@ -1,0 +1,11 @@
+import pandas as pd
+sales={'Day':['Mon','Tue','Wed','Thu','Fri'],'Revenue':[1200,1500,900,2000,1800]}
+df=pd.DataFrame(sales)
+print("Data:\n",df)
+print("Total Revenue: ",df['Revenue'].sum())
+print("Average Revenue: ",df['Revenue'].mean())
+aa = df[df['Revenue'] > (df['Revenue'].mean())]
+print("Days where Revenue greater than average:\n",aa)
+bx = df.plot(x='Day', y='Revenue',title='Revenue vs Day', kind='line',xlabel='Day',ylabel='Revenue',
+             figsize=(10, 4),color='blue')
+print("Day with highest Revenue: ",df.loc[df['Revenue'].idmax()])

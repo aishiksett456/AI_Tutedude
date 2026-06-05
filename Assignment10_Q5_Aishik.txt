@@ -1,0 +1,14 @@
+students={'Name':['Amit','Neha','Rahul','Sneha','Pooja'],
+         'Marks':[78,85,90,66,72],
+         'Subjects':['Math','Math','Science','Science','Math']}
+s=pd.DataFrame(students)
+print("Information: ",s.info())
+print("Description: ",s.describe())
+print("Top 3 using head:\n",s.head(3))
+print("Last 2 using tail:\n",s.tail(2))
+ss = s.sort_values(by='Marks', ascending=False)
+print("\nOriginal Index before sorting:", ss.index.tolist())
+print("Details after Sorting: ",ss)
+ss1 = s.sort_values(by='Marks', ascending=False, ignore_index=True)
+print("\nSorted DataFrame (with reset index): ",ss1)
+print("\nNew Index:", ss1.index.tolist())

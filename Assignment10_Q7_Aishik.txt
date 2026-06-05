@@ -1,0 +1,10 @@
+students={'Name':['Amit','Neha','Rahul','Sneha','Pooja'],
+         'Marks':[78,85,90,66,72],
+         'Subjects':['Math','Math','Science','Science','Math']}
+s=pd.DataFrame(students)
+avg=s.groupby('Subjects')['Marks'].mean()
+print("Average marks for each Subject: ",avg)
+c=s.groupby('Subjects')['Name'].count()
+print("No.of. Students per Subject: ",c)
+mm=s.groupby('Subjects')['Marks'].max()
+print("Maximum Marks per Subject: ",mm)

@@ -1,0 +1,8 @@
+import pandas as pd
+marks=[78,85,90,66,72]
+data=pd.Series(marks)
+print("The series is: ",data)
+print("The index is: ",data.index)
+print("The data type is: ", data.dtype)
+print("The 1st element is: ",data.head(1))
+print("The last 2 elements are: ",data.tail(2))

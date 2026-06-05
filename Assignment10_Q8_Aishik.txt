@@ -1,0 +1,10 @@
+ss = pd.DataFrame({
+    'Name': ['A', 'B', 'C', 'D', 'E'],
+    'Marks': [77, 82, 93, 68, 74]
+})
+print("DataFrame: ",ss)
+ax = ss.plot(x='Name', y='Marks',title='Bar graph of Marks', kind='bar',figsize=(10, 4),color='green',
+             edgecolor='black',legend=False)
+bx = ss.plot(x='Name', y='Marks',title='Line graph of Marks', kind='line',figsize=(10, 4),color='blue')
+cx = ss.plot(x='Name', y='Marks',title='Histogram of Marks', kind='hist',figsize=(10, 4),color='cyan',
+             edgecolor='black',legend=False)

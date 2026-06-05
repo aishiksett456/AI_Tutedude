@@ -1,0 +1,11 @@
+marks=[78,85,90,66,72]
+data=pd.Series(marks)
+ar = data.add(5)     
+sr = data.sub(2)     
+mr = data.mul(1.05)     
+dr = data.div(2)      
+
+print("Addition result is: ", ar.tolist())
+print("Subtraction result is:", sr.tolist())
+print("Multiplication result is:", mr.tolist())
+print("Division result is:", dr.tolist())
