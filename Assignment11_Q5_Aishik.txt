@@ -1,0 +1,24 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+cat = ['PCP', 'Foods', 'Agarbatti', 'NBDC']
+s1 = [1200, 2150, 1500, 1800]
+s2 = [1300, 1600, 2000, 1450]
+s3 = [1550, 1900, 1900, 1500]
+s4 = [1200, 1700, 1330, 1300]
+
+x = np.arange(len(cat))
+width = 0.2
+
+plt.figure(figsize=(10, 6))
+plt.bar(x, s1, label='2021')
+plt.bar(x, s2, label='2022')
+plt.bar(x, s3, label='2023')
+plt.bar(x, s4, label='2024')
+
+plt.xlabel('Category')
+plt.ylabel('Sales(in Lacs)')
+plt.title('Sales in each category (2021-24)')
+plt.xticks(x, cat)
+plt.legend()
+plt.show()

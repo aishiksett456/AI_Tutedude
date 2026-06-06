@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+m = ['Jan25', 'Feb25', 'Mar25', 'Apr25', 'May25', 'June25','Jul25','Aug25']
+s = [1200, 1500, 1700, 1060, 2010, 2400,1800,1400]
+
+df = pd.DataFrame({
+    'MonthName': m,
+    'SaleVal': s
+})
+
+plt.plot(df['MonthName'], df['SaleVal'],marker='*')
+plt.title('Sales Value over Months')
+plt.xlabel('MonthName')
+plt.ylabel('SaleVal')
+plt.show()

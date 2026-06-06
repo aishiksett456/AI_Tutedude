@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+d= {
+    'Sales_Value': [5000, 7500, 6200, 3000, 4200, 3800, 1500, 2100, 1800, 2000],
+    'Sales_Volume': [50, 75, 62, 100, 140, 125, 200, 280, 240, 80]
+}
+
+df = pd.DataFrame(d)
+
+plt.scatter(df['Sales_Volume'],df['Sales_Value'])
+
+plt.xlabel('Sales Volume')
+plt.ylabel('Sales Value')
+plt.title('Sales Value vs Sales Volume')
+plt.show()

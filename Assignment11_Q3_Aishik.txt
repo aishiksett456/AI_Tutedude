@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('student_depression_dataset.csv')
+d=df['Dietary Habits'].value_counts()
+x=d.index
+y=d.values
+plt.figure(figsize=(10,4))
+plt.barh(x,y)
+plt.xlabel("Dietary Habits")
+plt.ylabel("Count")
+plt.title("Count based on Dietary Habits")
+plt.show()
+
+d1=df['Dietary Habits'].value_counts()
+x1=d1.index
+y1=d1.values
+plt.figure(figsize=(10,4))
+plt.bar(x1,y1,color='cyan')
+plt.xlabel("Dietary Habits")
+plt.ylabel("Count")
+plt.title("Count based on Dietary Habits")
+plt.show()

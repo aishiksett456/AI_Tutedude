@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+
+def label_format(pct):
+    return f'{pct:.2f}%'
+
+cat=['Foods', 'PCP', 'Matches', 'Agarbatti']
+values=[37, 24, 18, 19]
+
+plt.figure(figsize=(8, 8))
+plt.pie(values,labels=cat,autopct=label_format)
+plt.title('Category Share')
+plt.show()
