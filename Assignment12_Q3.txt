@@ -1,0 +1,29 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+sns.histplot(data=df, x="total_bill")
+plt.title("Count of Total Bills")
+plt.xlabel("Total Bill")
+plt.ylabel("Count")
+plt.show()
+
+df = sns.load_dataset("tips")
+sns.histplot(data=df, x="total_bill",kde=True)
+plt.title("Count of Total Bills (Using KDE)")
+plt.xlabel("Total Bill")
+plt.ylabel("Count")
+plt.show()
+
+df = sns.load_dataset("tips")
+sns.rugplot(data=df, x="total_bill")
+plt.title("Rug Plot of Total Bill")
+plt.xlabel("Total Bill")
+plt.show()
+
+sns.kdeplot(data=df, x="total_bill", fill=True)
+plt.title("KDE Plot of Total Bill")
+plt.xlabel("Total Bills")
+plt.ylabel("Density of the curve")
+plt.show()

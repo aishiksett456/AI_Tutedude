@@ -1,0 +1,32 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+d = np.arange(1, 32)
+t = 31 + 5 * np.sin(d * 0.3) + np.random.randn(31) * 1.5
+
+df = pd.DataFrame({'Day': d,'Temperature': t})
+
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='Day', y='Temperature', data=df)
+plt.title("Line Graph")
+plt.show()
+
+sns.lineplot(x='Day', y='Temperature', data=df,marker='o')
+plt.title("Scatter Style line graph")
+plt.show()
+
+np.random.seed(42)
+d1 = np.arange(1, 11)
+df1 = pd.DataFrame({
+    'Day': list(d1) * 3,
+    'Temperature': np.concatenate([
+        20 + np.sin(d1) * 2 + np.random.randn(10),
+        25 + np.sin(d1) * 2 + np.random.randn(10),
+        30 + np.sin(d1) * 2 + np.random.randn(10)
+    ]),
+    'Category': ['A'] * 10 + ['B'] * 10 + ['C'] * 10
+})
+g = sns.relplot(data=df1,x='Day',y='Temperature',col='Category',kind='line')
+plt.show()

@@ -1,0 +1,30 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+df = pd.DataFrame({
+    'Val': np.concatenate([
+        np.random.normal(loc=10, scale=2, size=70),
+        np.random.normal(loc=15, scale=2.5, size=60),
+        np.random.normal(loc=12, scale=2, size=70)
+    ]),
+    'Cat': np.concatenate([
+        ['A'] * 70,
+        ['B'] * 60,
+        ['C'] * 70
+    ])
+})
+
+g = sns.FacetGrid(df, col='Cat', height=4, aspect=1)
+g.map(plt.hist, 'Val', bins=20, color='skyblue', edgecolor='black', alpha=0.7)
+g.set_axis_labels('Val', 'Count')
+plt.suptitle('Facet Grid: Numerical value on x-axis', y=1.02)
+plt.show()
+
+g1 = sns.FacetGrid(df, col='Cat', height=4, aspect=1)
+g1.map(plt.hist, 'Val', bins=20, color='blue', edgecolor='black', alpha=0.7)
+g1.set_axis_labels('Count','Val')
+plt.suptitle('Facet Grid: Numerical value on y-axis', x=1.02)
+plt.show()

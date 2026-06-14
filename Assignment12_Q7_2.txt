@@ -1,0 +1,20 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+df = pd.DataFrame({
+    'A': np.random.normal(loc=10, scale=3, size=150),
+    'B': np.random.normal(loc=20, scale=4, size=150),
+    'Cat': np.random.choice(['A', 'B', 'C'], size=150)
+})
+
+df['B'] = df['A'] * 1.2 + np.random.normal(0, 3, size=150)
+df['B'] = df['B'] + df['Cat'].map({'A': 0, 'B': 3, 'C': -2})
+
+sns.lmplot(x='A', y='B', data=df, hue='Cat')
+plt.title('LM Plot: B vs A by Category')
+plt.xlabel('Values of A')
+plt.ylabel('Values of B')
+plt.show()

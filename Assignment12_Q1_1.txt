@@ -1,0 +1,16 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.DataFrame({
+    'sales': [1200, 1500, 1700, 1600, 2100, 2400],
+    'profit': [300, 400, 450, 420, 500, 600]
+})
+
+sns.relplot(data=df, x='sales', y='profit', kind='line',color='blue')
+plt.title("Sales vs Profit")
+plt.show()
+
+sns.relplot(data=df, x='sales', y='profit', kind='scatter',color='green')
+plt.title("Sales(s) vs Profit(p)")
+plt.show()

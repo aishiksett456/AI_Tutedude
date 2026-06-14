@@ -1,0 +1,44 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+np.random.seed(42)
+df = pd.DataFrame({
+    'Category': np.random.choice(['A', 'B', 'C'], size=150),
+    'Value': np.concatenate([
+        np.random.normal(loc=10, scale=2, size=50),
+        np.random.normal(loc=15, scale=3, size=50),
+        np.random.normal(loc=12, scale=2.5, size=50)
+    ])
+})
+df['Score'] = df['Value'] * 0.8 + np.random.normal(0, 2, size=150)
+
+fig = plt.figure(figsize=(14, 10))
+
+plt.subplot(2, 2, 1)
+sns.barplot(x='Category', y='Value', data=df, estimator=np.mean, ci=95, palette='viridis')
+plt.title('Bar Plot: Mean Value by Category')
+plt.xlabel('Category')
+plt.ylabel('Mean Value')
+
+plt.subplot(2, 2, 2)
+sns.violinplot(x='Category', y='Value', data=df, palette='coolwarm', inner='box')
+plt.title('Violin Plot: Value Distribution by Category')
+plt.xlabel('Category')
+plt.ylabel('Value')
+
+plt.subplot(2, 2, 3)
+sns.boxplot(x='Category', y='Value', data=df, palette='Set2', showfliers=True)
+plt.title('Box Plot: Value Quartiles by Category')
+plt.xlabel('Category')
+plt.ylabel('Value')
+
+plt.subplot(2, 2, 4)
+sns.countplot(x='Category', data=df, palette='muted')
+plt.title('Count Plot: Frequency of Categories')
+plt.xlabel('Category')
+plt.ylabel('Count')
+
+plt.tight_layout()
+plt.show()

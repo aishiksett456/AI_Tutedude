@@ -1,0 +1,30 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+np.random.seed(42)
+n = 1000
+x = np.random.normal(loc=0, scale=1, size=n)
+y = np.random.normal(loc=0.5, scale=1.5, size=n) + 0.3 * x
+
+df = pd.DataFrame({
+    'A': x,
+    'B': y
+})
+
+sns.histplot(data=df,x='A',y='B',bins=20, 
+    cmap='viridis',cbar=True)
+
+plt.xlabel('X axis feature')
+plt.ylabel('Y axis feature')
+plt.title('Bivariate Histogram')
+plt.show()
+
+df1 = pd.DataFrame({'A': x,'B': y})
+sns.kdeplot(data=df1,x='A',y='B',fill=True,thresh=0.09)
+
+plt.xlabel('X axis')
+plt.ylabel('Y axis')
+plt.title('Bivariate KDE Plot')
+plt.show()

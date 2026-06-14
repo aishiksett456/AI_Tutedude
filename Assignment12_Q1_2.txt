@@ -1,0 +1,14 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = sns.load_dataset("tips")
+
+sns.relplot(
+    data=df,
+    x="total_bill",y="tip",    
+    hue="smoker",    
+    kind="scatter"   
+)
+
+plt.title("Graph on Tips Dataset'")
+plt.show()

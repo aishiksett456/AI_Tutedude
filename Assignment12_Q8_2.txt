@@ -1,0 +1,19 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.relplot(data=tips,x="total_bill",y="tip",hue="sex",
+    kind="scatter")
+plt.suptitle("Relplot: Total Bill vs Tip")
+plt.show()
+
+sns.catplot(data=tips,x="day",y="total_bill",hue="sex",
+    kind="box")
+plt.suptitle("Catplot: Total Bill by Day")
+plt.show()
+
+sns.displot(data=tips,x="total_bill",hue="sex",kind="hist",
+    kde=True)
+plt.suptitle("Displot: Distribution of Total Bill")
+plt.show()
